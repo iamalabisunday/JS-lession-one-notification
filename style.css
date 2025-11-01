@@ -1,0 +1,83 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-size: 1.25rem;
+  background-color: rgb(235, 235, 235);
+}
+
+.container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+}
+
+.container__content {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Notification Icon section */
+.container__content .fa-brands {
+  font-size: 10rem;
+  color: #3e34ff;
+  margin-bottom: 2rem;
+}
+
+/* Notify data count Section */
+.container__notify {
+  position: relative;
+}
+
+.container__notify::after {
+  position: absolute;
+  content: attr(data-count);
+  top: 0;
+  right: -0.3rem;
+  font-size: 3rem;
+  font-weight: bold;
+  color: white;
+  padding: 0.5rem 1.2rem;
+  background: linear-gradient(#ff1a1a, #ff0000, #ef0000);
+  border-radius: 10rem;
+  color: white;
+  line-height: 100%;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.container__notify.add-numb::after {
+  opacity: 1;
+}
+
+/* Button Section */
+.container--btn {
+  height: 4rem;
+  width: 12rem;
+  color: white;
+  font-weight: bold;
+  border: 1px solid #111755;
+  border-radius: 0.3rem;
+  line-height: 4rem;
+  background-color: #1a237e;
+  cursor: pointer;
+  outline: none;
+
+  &:hover {
+    background-color: #111755;
+  }
+}
